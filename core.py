@@ -228,7 +228,7 @@ def xkcd_comp():
     #Randomizing link, and concatenating into a url, then requesting from api
     latest = requests.get('https://xkcd.com/info.0.json').json()['num']
     random = randint(1, latest)
-    photo = requests.get(f'https://xkcd.com/{random}').json()['img']
+    photo = requests.get(f'https://xkcd.com/{random}/info.0.json').json()['img']
     caption = f'Here goes an xkcd.com/{str(random)}'
     return [photo, caption]
 
