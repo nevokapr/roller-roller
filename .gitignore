@@ -1,0 +1,7 @@
+envscript.ps1
+config.py
+logs.txt
+users.csv
+suggestions.csv
+/__pycache__
+/rollenv
