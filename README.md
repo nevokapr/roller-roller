@@ -11,6 +11,9 @@ It'll generate users.csv, logs.txt, suggestions.csv in config-specified path.
 
 /cat would fetch one via catapi (credited in outputted message)
 
+to-do
+* Add timeout in requests
+
 
 Planned features
 - administration via tg (pm with user_id verification)
