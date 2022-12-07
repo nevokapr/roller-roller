@@ -12,8 +12,8 @@ false_starts = [
     ]
 
 def err_log(error):
-    with open(f'{filespath}logs.txt', 'a+') as logs:
-            logs.write(f'\n\n{error}, {now()}')
+    with open(f'{filespath}logs.txt', 'a+', encoding='UTF-8') as logs:
+        logs.write(f'\n\n{error}, {now()}')
     return "Произошла ошибка, свяжитесь с @Nevokapr"
 
 def add_sugg(user_fullname, user_id, text):
