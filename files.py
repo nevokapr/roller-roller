@@ -28,7 +28,7 @@ def add_sugg(user_fullname, user_id, text):
 
 def grab(user_fullname, user_name, user_id, func, text=''):
     try:
-        with open(f"{filespath}users.csv", "a+", encoding="utf-8") as file:
+        with open(f"{filespath}", "a+", encoding="utf-8") as file:
             file.write(f'\n\n{user_fullname}, {user_name}, {user_id}, {func}, {text}, {now()}')
     except Exception as e:
         return err_log(e)
