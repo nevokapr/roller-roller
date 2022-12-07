@@ -12,7 +12,8 @@ def outputter(task_type):
         file_path = config.filespath + '/task_media.csv'
     df = pandas.read_csv(
         f'{file_path}',
-        index_col=False
+        index_col=False,
+        delimiter='№'
     )
     return str(list(df.sample(n=1)['body'])[0])
 
