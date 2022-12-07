@@ -5,10 +5,11 @@ import config
 
 #function to read csv and get random task of any passed type
 def outputter(task_type):
+    
     if task_type == 'text':
-        file_path = 'task_text.csv'
+        file_path = config.filespath + '/task_text.csv'
     else:
-        file_path = 'task_media.csv'
+        file_path = config.filespath + '/task_media.csv'
     df = pandas.read_csv(
         f'{file_path}',
         index_col=False
