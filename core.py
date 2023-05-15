@@ -71,7 +71,7 @@ def askhole_compose(user_id, user_name):
         user = user_name
     ending = '__взято с askhole.io__'
     df = pandas.read_csv(
-        f'{config.askhole_path}',
+        (f'{config.askhole_path} + /askhole.csv'),
         index_col=False,
         delimiter='№'
     )
