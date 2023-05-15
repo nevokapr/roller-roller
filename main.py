@@ -33,6 +33,14 @@ async def roll(update: Update, context: ContextTypes.DEFAULT_TYPE):
     files.grab(user_fullname, user_name, user_id, 'roll')
     await update.message.reply_text(core.compose_dbl(user_id, user_fullname))
 
+async def askhole(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_fullname = update.message.from_user.full_name
+    user_name = update.message.from_user.username
+    user_id = update.message.from_user.id
+    files.grab(user_fullname, user_name, user_id, 'askhole')
+    await update.message.reply_text(core.askhole_compose(user_id, user_fullname))
+        
+
 async def xkcd(update: Update, context: ContextTypes.DEFAULT_TYPE):
     img = core.xkcd_comp()[0]
     text = core.xkcd_comp()[1]
@@ -54,6 +62,9 @@ if __name__ == '__main__':
 
     roll.handler = CommandHandler('roll', roll)
     application.add_handler(roll.handler)
+
+    askhole.handler = CommandHandler('askhole', askhole)
+    application.add_handler(askhole.handler)
 
     xkcd.handler = CommandHandler('xkcd', xkcd)
     application.add_handler(xkcd.handler)

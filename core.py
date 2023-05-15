@@ -64,6 +64,22 @@ def compose_dbl(user_id, user_name):
     message = roll_text + ',\n\nИ/или,\n\n' + roll_media
     return message
 
+def askhole_compose(user_id, user_name):
+    if user_id in USER_LIB:
+        user = USER_LIB[user_id]
+    else:
+        user = user_name
+    ending = '__взято с askhole.io__'
+    df = pandas.read_csv(
+        f'{config.askhole_path}',
+        index_col=False,
+        delimiter='№'
+    )
+    question = str(list(df.sample(n=1)['body'])[0])
+    message = f'{user}, {question}' + '\n\n' + ending
+    return message
+
+
 def xkcd_comp():
     #Randomizing link, and concatenating into a url, then requesting from api
     latest = requests.get('https://xkcd.com/info.0.json', timeout=10).json()['num']
