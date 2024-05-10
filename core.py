@@ -32,31 +32,12 @@ FIN = [
     ", так-то!"
 ]
 
-USER_LIB = {
-    121405857 : 'Уточька',
-    266135829 : 'Миря',
-    168734898 : 'Ян',
-    131523703 : "Антон",
-    81304718 : "Максимка",
-    161461120 : "Агата",
-    460481449 : "СексиСёма1804",
-    344777686 : "Анна Петровна",
-    207236070 : "веточька",
-    457223337 : "Майя",
-    986890458 : "Танечька",
-    203938539 : "Виктор",
-    232597441 : "Онежа",
-    449382033 : "ʁиvɐdɯɔʚɐ",
-    85882326 : "Ебатель 'лжев' Жсонов",
-
-}
-
 def send_support():
     return config.support_msg
 
 def compose_dbl(user_id, user_name):
-    if user_id in USER_LIB:
-        user = USER_LIB[user_id]
+    if user_id in config.USER_LIB:
+        user = config.USER_LIB[user_id]
     else:
         user = user_name
     roll_text = f'{user}, напиши ' + outputter('text')
@@ -65,8 +46,8 @@ def compose_dbl(user_id, user_name):
     return message
 
 def askhole_compose(user_id, user_name):
-    if user_id in USER_LIB:
-        user = USER_LIB[user_id]
+    if user_id in config.USER_LIB:
+        user = config.USER_LIB[user_id]
     else:
         user = user_name
     ending = '__взято с askhole.io__'
